@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   private _stateObject : ActionObject;
 
   private _d3Object : any;
+  private _renderObject : any;
 
   constructor(private _panelActionState : PanelactionService) { }
 
@@ -48,10 +49,12 @@ export class DashboardComponent implements OnInit {
       }))
       .append("g")
 
-      var circles = this._d3Object.selectAll("rect")
-                          .data(this.containerPoints)
-                          .enter()
-                          .append("rect")
+      this._renderObject = this._d3Object.selectAll("rect")
+                          .data(this.containerPoints);
+      
+                          this._renderObject.exit().remove();//remove unneeded circles                    
+                          this._renderObject.enter()
+                          .append("rect") 
                           .attr("x", (d) => {return d.x})
                           .attr("y", (d) => {return d.y})
                           .attr("fill", (d) => {return d.color})
@@ -61,9 +64,26 @@ export class DashboardComponent implements OnInit {
                           .on("click", (d) => {this.selectedConatiner(d)});
   }
 
-  // private _produceXOrder():Array<any>{
-
-  // }
+  
+  private _setData() : void {
+    this._renderObject = this._d3Object.selectAll("rect")
+                          .data(this.containerPoints);
+      
+    this._renderObject.exit().remove();//remove unneeded circles                    
+    this._renderObject.enter()
+    .append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", '40px')
+    .attr("height", '40px')
+    .on("click", (d) => {this.selectedConatiner(d)}) // Get attributes from circleAttrs var
+    
+    this._renderObject.transition().duration(500)
+    .attr("x", (d) => {return d.x})
+    .attr("y", (d) => {return d.y})
+    .attr("fill", (d) => {return d.color})
+    .attr("border", '1px solid white');
+  }
 
   private _setupConfiguration() : void {
     this._panelActionState.getColorActionUpdate().pipe(takeWhile(()=> {
@@ -72,17 +92,7 @@ export class DashboardComponent implements OnInit {
       this._stateObject = {...state};
       if (state.id !== '' && state.background !== '') {
         this.containerPoints[this.containerPoints.findIndex((e) => e.id === state.id)].color = state.background;
-        var circles = this._d3Object.selectAll("rect")
-                          .data(this.containerPoints)
-                          .enter()
-                          .append("rect")
-                          .attr("x", (d) => {return d.x})
-                          .attr("y", (d) => {return d.y})
-                          .attr("fill", (d) => {return d.color})
-                          .attr("border", '1px solid white')
-                          .attr("width", '40px')
-                          .attr("height", '40px') // Get attributes from circleAttrs var
-                          .on("click", (d) => {this.selectedConatiner(d)});
+        this._setData();
       }
     })
   }
