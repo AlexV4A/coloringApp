@@ -1,0 +1,10 @@
+<header>Dashboard</header>
+  <div id="main">
+    <article class="container-article-class">
+        <div  *ngFor="let container of containers" class="container-class" 
+        [ngStyle]="{'top': container.top, 'left' : container.left, 
+        'background-color' : container.color }"
+         (click)="selectedConatiner(container)"></div></article>
+    <aside><app-leftpanel></app-leftpanel></aside>
+  </div>
+<footer>Footer</footer>

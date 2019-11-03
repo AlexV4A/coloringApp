@@ -1,0 +1,14 @@
+.left-box{
+    width: 20%;
+    min-width: 200px;
+    /* height: 100vh; */
+    display: flex;
+    flex-grow: 1;
+}
+
+.box-class {
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    border: #e2e2e2 5px solid;
+}

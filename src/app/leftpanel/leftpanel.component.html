@@ -1,0 +1,14 @@
+<div>
+    
+    <div>
+        Select a Color to apply.
+    </div>
+
+    <div class="left-box">
+
+        <div *ngFor="let color of colors">
+            <div class="box-class" [ngStyle]="{'background-color': color ? color.value : 'black' }" (click)="selectColor(color)"></div>
+        </div>
+
+    </div>
+</div>
