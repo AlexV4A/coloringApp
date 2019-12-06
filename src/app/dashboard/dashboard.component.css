@@ -2,8 +2,9 @@
     height: 40px;
     width: 40px;
     position: absolute;
-    border: 1px solid white;
-}
+    border: 1px solid white;        
+    color: #fff;
+  }
 
 * {
     box-sizing: border-box; 
@@ -17,7 +18,12 @@
   }
   #main {
     display: flex;
-    flex: 1;
+    flex: 1;    
+    background: #222222;
+    background: #16222A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #16222A , #3A6073); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #16222A , #3A6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   }
   #main > article {
     flex: 1;
@@ -28,17 +34,16 @@
   #main > nav, 
   #main > aside {
     flex: 0 0 20vw;
+    background: #222222;
   }
   #main > nav {
-    background: #D7E8D4;
     order: 3;
   }
   #main > aside {
-    background: beige;
     order: 2;
   }
   header, footer {
-    background: yellowgreen;
+    background: #aeaeae;
     height: 10vh;
   }
   header, footer, article, nav, aside {

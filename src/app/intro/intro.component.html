@@ -1,3 +1,30 @@
-<p>intro works!</p>
+<div class="holder">
+    <div class="container">
+        <div class="logo">Agent Q Dashboard</div>
+        <div class="login-item">
+            <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form form-login">
+                <div class="form-field">
+                    <label class="user" for="login-username">
+                        <span class="hidden">Username</span>
+                    </label>
+                    <input id="login-username" type="text" class="form-input"
+                    formControlName="name" placeholder="Username" required>
+                </div>
 
-<button (click)="gotoDashBoard()">CLICK MEEEE</button>
+                <div class="form-field">
+                    <label class="lock" for="login-password">
+                        <span class="hidden">Password</span>
+                    </label>
+                    <input id="login-password" type="password" class="form-input" 
+                    formControlName="password" placeholder="Password" required>
+                </div>
+                <div *ngIf="errorText !== ''" class="invalid-feedback">
+                    {{errorText}}
+                </div>
+                <div class="form-field">
+                    <input type="submit" [disabled]="registerForm.invalid" value="Log in">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
