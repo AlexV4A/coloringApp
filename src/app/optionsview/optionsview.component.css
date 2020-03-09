@@ -1,0 +1,112 @@
+
+html {
+    height: 100%;
+ }
+ 
+ .holder{
+ /* Remember to use the other versions for IE 10 and older browsers! */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: calc(100vh);
+ font-family: 'lato', sans-serif;
+ color: #fff;
+ background: #222222;
+ background: #16222A; /* fallback for old browsers */
+ background: -webkit-linear-gradient(to top,  #389fe4 , #0c161b); /* Chrome 10-25, Safari 5.1-6 */
+ background: linear-gradient(to top, #389fe4 , #0c161b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ }
+ 
+.logo{
+    font-family: "museo-slab";  
+    font-size:40px;
+    text-align: center;
+    padding: 20px 20px 0;
+    margin:0;
+  }
+  
+ 
+ .game-style {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    }
+    .game-style span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    }
+    .game-style span:before {
+    content: '\226A';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+    color: #000000;
+    }
+    .game-style:hover {
+    background-color: #f7c2f9;
+    color: #000000;
+    }
+    .game-style:hover span {
+    padding-left: 25px;
+    color: #323f46;
+    }
+    .game-style:hover span:before {
+    opacity: 1;
+    left: 0;
+    }
+
+    .draw-style {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    }
+    
+    .draw-style span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    }
+    .draw-style span:after {
+    content: '\226B';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: #000000;
+    }
+    .draw-style:hover {
+    background-color: #f7c2f9;
+    color: #000000;
+    }
+    .draw-style:hover span {
+    padding-right: 25px;
+    color: #323f46;
+    }
+    .draw-style:hover span:after {
+    opacity: 1;
+    right: 0;
+    }

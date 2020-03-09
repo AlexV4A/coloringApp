@@ -29,7 +29,7 @@ export class IntroComponent implements OnInit {
     let formValue = JSON.parse(JSON.stringify(this.registerForm.value, null, 4));
     this.commonService.checkLogin(formValue.name, formValue.password).subscribe((res) => {
       if(res){
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/options']);
       }
       else {
         this.errorText = 'Invalid Login. please try again'

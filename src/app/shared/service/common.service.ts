@@ -13,4 +13,9 @@ export class CommonService {
       return observable.next( (username === 'Allu' && password === 'Allu123'));
     })
   }
+
+  public getRandomColor(){
+    return '#'+Math.round(Math.random() * 255).toString(16)
+    +Math.round(Math.random() * 255).toString(16);
+  }
 }

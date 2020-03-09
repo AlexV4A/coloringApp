@@ -9,6 +9,8 @@ export class PanelactionService {
 
   private colorActionEvent = new BehaviorSubject<ActionObject>({id : '', background: '', width : '', height: ''});
 
+  private gameColorActionEvent = new BehaviorSubject<ActionObject>({id : '', background: '', width : '', height: ''});
+
   public _colorEvent: Observable<ActionObject> = this.colorActionEvent.asObservable();
   
   constructor() { }
@@ -19,6 +21,15 @@ export class PanelactionService {
 
   public getColorActionUpdate() : Observable<ActionObject> {
     return this.colorActionEvent.asObservable();
+  }
+
+
+  public setGameColorActionUpdate(colorObject: ActionObject) {
+    this.gameColorActionEvent.next(Object.assign({}, colorObject));
+  }
+
+  public getGameColorActionUpdate() : Observable<ActionObject> {
+    return this.gameColorActionEvent.asObservable();
   }
 
 }

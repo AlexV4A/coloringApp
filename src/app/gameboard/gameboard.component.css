@@ -1,0 +1,69 @@
+.container-class{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    border: 1px solid white;        
+    color: #fff;
+  }
+
+* {
+    box-sizing: border-box; 
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    max-height: 100vh;
+    flex-direction: column;
+    margin: 0 !important;
+  }
+  #main {
+    display: flex; 
+    background: #222222;
+    background: #16222A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #16222A , #3A6073); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #16222A , #3A6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  #main > article {
+    flex: 1;
+    order: 1;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+  #main > nav, 
+  #main > aside {
+    flex: 0 0 20vw;
+    background: #222222;
+  }
+  #main > nav {
+    order: 3;
+  }
+  #main > aside {
+    order: 2;
+  }
+  header, footer {
+    background: #aeaeae;
+    height: 10vh;
+  }
+  header, footer, article, nav, aside {
+    padding: 1em;
+  }
+
+  
+  .starting-game {
+    font-size: 50px;
+    display: flex;
+    padding: 100px;
+    justify-content: center;
+    animation: textscale 2s infinite;
+    animation-delay: 2s;
+  }
+  
+  @keyframes textscale {
+    from {transform: scale(1);}
+    to {transform: scale(1.5);}
+  }
+
+  .left-message-box {
+    text-align: center;
+  }

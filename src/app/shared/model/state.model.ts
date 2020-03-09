@@ -3,6 +3,7 @@ export interface ActionObject {
     background :string;
     width : string;
     height : string;
+    action ?: string;
 }
 
 export interface ContainerObject {

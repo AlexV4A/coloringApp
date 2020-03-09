@@ -1,0 +1,25 @@
+<div class="left-container">
+       
+    <div class="left-message-box">
+        Select the color displayed below
+    </div>
+
+    <div class="left-color-box">
+        <div *ngFor="let color of colors">
+            <div class="box-class" [ngStyle]="{'background-color': color ? color.value : 'black' }"></div>
+        </div>
+    </div>
+
+    <div class="left-counter-box">
+        <svg width="200" height="200">
+            <g transform="translate(-10,-10) scale(5)">
+                <circle class="stopwatch" cx="23.8" cy="24.1" r="10.1"/>
+                <path class="stopwatch" d="M28.2,15l0.6-1.4c0.9,0.3,1.7,0.8,2.4,1.4l-1,1.3"/>
+                <rect class="stopwatch" x="20.4" y="10.1" width="6.7" height="2.3"/>
+                <line class="stopwatch" x1="22.8" y1="14" x2="22.8" y2="12.4"/>
+                <line class="stopwatch" x1="24.8" y1="12.4" x2="24.8" y2="14"/>
+                <path class="stopwatch stopwatch-center" d=""/>
+            </g>
+        </svg>
+    </div>
+</div>

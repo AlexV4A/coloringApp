@@ -1,0 +1,6 @@
+<div class="modal" [ngClass]="{'modal-hidden': showMessage === false}">
+    <div class="modal-body" [ngClass]="{'modal-hidden': showMessage === false}">
+        <ng-content></ng-content>
+    </div>
+</div>
+<div class="modal-background" [ngClass]="{'modal-hidden': showMessage === false}"></div>
