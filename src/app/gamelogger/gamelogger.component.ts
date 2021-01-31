@@ -1,10 +1,9 @@
-import { Component, OnInit, ChangeDetectorRef, Output } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { ColorObject, ActionObject } from '../shared/model/state.model';
 import * as d3 from "d3v4";
 import { CommonService } from '../shared/service/common.service';
 import { PanelactionService } from '../shared/service/panelaction.service';
 import { takeWhile } from 'rxjs/operators';
-import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-gamelogger',
