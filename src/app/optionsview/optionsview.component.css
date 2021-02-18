@@ -16,6 +16,14 @@ html {
  background: -webkit-linear-gradient(to top,  #389fe4 , #0c161b); /* Chrome 10-25, Safari 5.1-6 */
  background: linear-gradient(to top, #389fe4 , #0c161b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  }
+
+ .item-contaner{
+    width: 426px;
+    flex-wrap: wrap;
+    height: auto;
+    display: flex;
+    justify-content: center;
+ }
  
 .logo{
     font-family: "museo-slab";  

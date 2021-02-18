@@ -20,4 +20,8 @@ export class OptionsviewComponent implements OnInit {
   drawHandler(){
     this.router.navigate(['/drawboard']);
   }
+
+  chartHandler(){
+    this.router.navigate(['/chartboard']);
+  }
 }

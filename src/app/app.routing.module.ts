@@ -6,6 +6,7 @@ import { LeftpanelComponent } from './leftpanel/leftpanel.component';
 import { OptionsviewComponent } from './optionsview/optionsview.component';
 import { GameboardComponent } from './gameboard/gameboard.component';
 import { DrawboardComponent } from './drawboard/drawboard.component';
+import { ChartboardComponent } from './chartboard/chartboard.component';
 
 const routes: Routes = [
     {
@@ -20,6 +21,10 @@ const routes: Routes = [
     {
         path: 'drawboard',
         component: DrawboardComponent
+    },
+    {
+        path: 'chartboard',
+        component: ChartboardComponent
     },
     {
         path: 'gameboard',
